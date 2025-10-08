@@ -219,7 +219,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support and queries:
 - Create an issue on GitHub
-- Contact: [Your Email]
+- Contact: aakashsingh688@gmail.com
 - Documentation: [Wiki](https://github.com/aakash688/Pehredar/wiki)
 
 ## 🏆 Credits
