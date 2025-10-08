@@ -53,6 +53,7 @@ tmp/
 # Database dumps
 *.sql
 *.dump
+*.zip
 
 # Backup files
 *.bak
