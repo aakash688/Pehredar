@@ -1,0 +1,70 @@
+﻿# PHP
+*.log
+*.cache
+*.tmp
+*.temp
+
+# Configuration files with sensitive data
+config-local.php
+config-local1.php
+.env
+.env.local
+.env.production
+
+# Cache directories
+cache/
+logs/
+uploads/temp_pdfs/
+
+# Vendor directory (managed by Composer)
+vendor/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node modules (if any)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Deployment packages
+deployment_packages/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Database dumps
+*.sql
+*.dump
+
+# Backup files
+*.bak
+*.backup
+
+# PHP specific
+composer.phar
+composer.lock
+
+# XAMPP specific
+xampp/
+
+# Test files
+test_*.php
+debug_*.php

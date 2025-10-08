@@ -1,0 +1,90 @@
+{
+  "company": {
+    "name": "RYAN PROTECTION FORCE",
+    "address": "Shop No. 3 Bramha Tower, Plot no. 40, Sector no. 2, Charkop, Kandivali-West, Mumbai, Maharashtra, 400067",
+    "mobile": "9702295293",
+    "email": "ryanprotectionforce@gmail.com",
+    "pan": "ATDPM0414C",
+    "logo_path": "http://localhost/project/Gaurd/Comapany/assets/logo-68c28e6699999-rpf%20logo.jpeg"
+  },
+  "client": {
+    "title": "BILL TO",
+    "name": "ACME AVENUE A WING CHS LTD",
+    "address": "Bhabrekar nagar, Charkop, Kandivali West, Mumbai, Maharashtra, 400067",
+    "pan": "AMAPM0686Q"
+  },
+  "invoice_meta": {
+    "invoice_no": "RP/SL/25-26/94",
+    "invoice_date": "01/09/2025",
+    "due_date": "08/09/2025"
+  },
+  "header": {
+    "bill_of_supply": "BILL OF SUPPLY",
+    "original_text": "ORIGINAL FOR RECIPIENT",
+    "tagline": "SECURITAS: Your trusted security partner for a safer tomorrow."
+  },
+  "items": [
+    {
+      "sno": 1,
+      "service_name": "Security Supervisor",
+      "service_description": "Security supervisor charges for the month of January 2024",
+      "quantity": "30 NOS",
+      "rate": "₹ 1,500.00",
+      "amount": "₹ 45,000.00"
+    },
+    {
+      "sno": 2,
+      "service_name": "Security Guard",
+      "service_description": "Security guard charges for the month of January 2024",
+      "quantity": "180 NOS",
+      "rate": "₹ 800.00",
+      "amount": "₹ 1,44,000.00"
+    },
+    {
+      "sno": 3,
+      "service_name": "Service Charges",
+      "service_description": "Service charges @ 10%",
+      "quantity": "1 PCS",
+      "rate": "₹ 18,900.00",
+      "amount": "₹ 18,900.00"
+    },
+    {
+      "sno": 4,
+      "service_name": "Additional Services",
+      "service_description": "Emergency response and monitoring services",
+      "quantity": "1 PCS",
+      "rate": "₹ 5,000.00",
+      "amount": "₹ 5,000.00"
+    }
+  ],
+  "summary": {
+    "round_off": "₹ 0.00",
+    "total": "₹ 2,12,900.00",
+    "received_amount": "₹ 0.00",
+    "amount_in_words": "Two Lakh Twelve Thousand Nine Hundred Rupees Only"
+  },
+  "bank_details": {
+    "title": "Bank Details",
+    "name": "RYAN PROTECTION FORCE",
+    "ifsc_code": "SURYOBK0000",
+    "account_no": "212020001301",
+    "bank": "Suryoday Small Finance Bank, CENTRAL BACK OFFICE"
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "conditions": [
+      "Payment should be name with RYAN PROTECTION FORCE",
+      "For TDS- PAN NO. AMAPM0686Q"
+    ]
+  },
+  "signature": {
+    "title": "Authorised Signatory",
+    "company_line": "For RYAN PROTECTION FORCE",
+    "signature_image_path": ""
+  },
+  "settings": {
+    "fixed_table_rows": 25,
+    "page_size": "A4",
+    "currency_symbol": "₹"
+  }
+}

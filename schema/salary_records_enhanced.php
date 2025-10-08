@@ -1,0 +1,78 @@
+<?php
+// schema/salary_records_enhanced.php - Enhanced salary records table structure
+
+return [
+    'table_name' => 'salary_records',
+    'action' => 'alter', // This will alter the existing table
+    'new_columns' => [
+        'additional_bonuses' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Total bonuses for the month"',
+        'total_deductions' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Total deductions for the month"',
+        'advance_deduction_amount' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Advance salary deduction"',
+        'gross_salary' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Gross salary before deductions"',
+        'net_salary' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Net salary after all adjustments"',
+        'bonus_details' => 'JSON NULL COMMENT "Detailed bonus breakdown"',
+        'deduction_details' => 'JSON NULL COMMENT "Detailed deduction breakdown"',
+        'advance_id' => 'INT NULL COMMENT "Related advance record"',
+        'calculation_method' => 'ENUM("automatic", "manual", "hybrid") DEFAULT "automatic"',
+        'has_adjustments' => 'BOOLEAN DEFAULT FALSE COMMENT "Has manual adjustments"',
+        'adjustment_reason' => 'TEXT NULL COMMENT "Reason for manual adjustments"',
+        'overtime_amount' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Overtime payment amount"',
+        'holiday_amount' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Holiday payment amount"',
+        'double_shift_amount' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Double shift payment amount"',
+        'tax_deduction' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Tax deductions"',
+        'pf_deduction' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Provident Fund deduction"',
+        'esi_deduction' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "ESI deduction"',
+        'other_statutory_deductions' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Other statutory deductions"',
+        'loan_deduction' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Loan deductions"',
+        'insurance_deduction' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Insurance deductions"',
+        'uniform_deduction' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Uniform cost deductions"',
+        'disciplinary_deduction' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Disciplinary deductions"',
+        'welfare_fund_deduction' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Welfare fund deductions"',
+        'performance_bonus' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Performance-based bonus"',
+        'festival_bonus' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Festival bonuses"',
+        'attendance_bonus' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Attendance-based bonus"',
+        'other_allowances' => 'DECIMAL(12,2) DEFAULT 0 COMMENT "Other allowances"',
+        'working_days_actual' => 'INT DEFAULT 0 COMMENT "Actual working days in month"',
+        'leave_days' => 'INT DEFAULT 0 COMMENT "Leave days taken"',
+        'unpaid_leave_days' => 'INT DEFAULT 0 COMMENT "Unpaid leave days"',
+        'overtime_hours' => 'DECIMAL(8,2) DEFAULT 0 COMMENT "Total overtime hours"',
+        'double_shift_days_actual' => 'INT DEFAULT 0 COMMENT "Actual double shift days"',
+        'salary_components' => 'JSON NULL COMMENT "Detailed salary component breakdown"',
+        'approval_status' => 'ENUM("draft", "pending_approval", "approved", "rejected") DEFAULT "draft"',
+        'approved_by_hr' => 'INT NULL COMMENT "HR manager who approved"',
+        'approved_by_finance' => 'INT NULL COMMENT "Finance manager who approved"',
+        'hr_approval_at' => 'TIMESTAMP NULL COMMENT "HR approval timestamp"',
+        'finance_approval_at' => 'TIMESTAMP NULL COMMENT "Finance approval timestamp"',
+        'rejection_reason' => 'TEXT NULL COMMENT "Reason for rejection if applicable"',
+        'last_calculated_at' => 'TIMESTAMP NULL COMMENT "When salary was last calculated"',
+        'last_modified_by' => 'INT NULL COMMENT "Last user who modified the record"',
+        'modification_history' => 'JSON NULL COMMENT "History of modifications"',
+        'payroll_batch_id' => 'VARCHAR(50) NULL COMMENT "Payroll batch identifier"',
+        'bank_transfer_reference' => 'VARCHAR(100) NULL COMMENT "Bank transfer reference number"',
+        'bank_transfer_status' => 'ENUM("pending", "processing", "completed", "failed") NULL COMMENT "Bank transfer status"',
+        'bank_transfer_date' => 'DATE NULL COMMENT "Date of bank transfer"',
+        'slip_generated_at' => 'TIMESTAMP NULL COMMENT "When salary slip was generated"',
+        'slip_downloaded_count' => 'INT DEFAULT 0 COMMENT "Number of times slip was downloaded"',
+        'employee_acknowledged' => 'BOOLEAN DEFAULT FALSE COMMENT "Employee acknowledged receipt"',
+        'employee_acknowledged_at' => 'TIMESTAMP NULL COMMENT "When employee acknowledged"'
+    ],
+    'new_constraints' => [
+        'FOREIGN KEY (advance_id) REFERENCES advance_salary_enhanced(id) ON DELETE SET NULL',
+        'FOREIGN KEY (approved_by_hr) REFERENCES users(id) ON DELETE SET NULL',
+        'FOREIGN KEY (approved_by_finance) REFERENCES users(id) ON DELETE SET NULL',
+        'FOREIGN KEY (last_modified_by) REFERENCES users(id) ON DELETE SET NULL'
+    ],
+    'new_indexes' => [
+        'INDEX idx_advance_id (advance_id)',
+        'INDEX idx_approval_status (approval_status)',
+        'INDEX idx_payroll_batch (payroll_batch_id)',
+        'INDEX idx_bank_transfer_status (bank_transfer_status)',
+        'INDEX idx_calculation_method (calculation_method)',
+        'INDEX idx_has_adjustments (has_adjustments)',
+        'INDEX idx_employee_acknowledged (employee_acknowledged)',
+        'INDEX idx_last_calculated (last_calculated_at)',
+        'INDEX idx_gross_salary (gross_salary)',
+        'INDEX idx_net_salary (net_salary)'
+    ]
+];
+?>

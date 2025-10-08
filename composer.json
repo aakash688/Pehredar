@@ -1,0 +1,13 @@
+{
+    "require": {
+        "firebase/php-jwt": "^6.3",
+        "dompdf/dompdf": "^3.1",
+        "endroid/qr-code": "^6.0",
+        "phpmailer/phpmailer": "^6.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

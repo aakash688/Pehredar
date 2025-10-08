@@ -1,0 +1,45 @@
+/* Calendar specific styling */
+.calendar-day {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendar-day:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.calendar-day.weekend {
+    color: #9ca3af; /* gray-400 */
+}
+
+.calendar-day.holiday {
+    background-color: #dc2626; /* red-600 */
+    color: white;
+    font-weight: bold;
+}
+
+.calendar-day.selected {
+    background-color: #4f46e5; /* indigo-600 */
+    color: white;
+}
+
+/* Calendar grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+/* Calendar header */
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin-bottom: 4px;
+} 
